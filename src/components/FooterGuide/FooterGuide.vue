@@ -2,7 +2,7 @@
   <div class="footer-guide">
     <a class="guide__item" :class="{ on: $route.path == '/msite' }" @click="goTo('/msite')">
       <span class="item__icon">
-        <i>💗</i>
+        <i>🕋</i>
       </span>
       <span>外卖</span>
     </a>

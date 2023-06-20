@@ -53,7 +53,9 @@ export default{
   components:{HeaderTop},
   methods:{
     loginRouter(){
-      // this.$router
+      this.$router.replace({
+        path:'/login'
+      })
     }
   }
 }

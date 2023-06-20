@@ -24,6 +24,11 @@ VueRouter.prototype.replace=function(lacation,resolve,reject){
 export default new VueRouter({
   routes:[
     {
+      path:'/',
+      redirect:{name:'home'}
+    },
+    {
+      name:'home',
       path:'/msite',
       component:MSite,
       meta:{isFooter:true}

@@ -1,6 +1,9 @@
 <template>
   <div class="app">
+    <!-- 缓存路由组件 -->
+    <keep-alive>
     <router-view/>
+    </keep-alive>
     <FooterGuide
       v-show="$route.meta.isFooter"
     />
