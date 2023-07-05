@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      transition: all 1s;
+    }
+    html{
+      -webkit-app-region: drag;
+    }
+    .nav{
+      width: 400px;
+      height: 800px;
+      background-color: cadetblue;
+    }
+    .nav:hover{
+      background-color: blue;
+    }
+  </style>
 </head>
-
 <body>
-  <script>
-  </script>
+  <div class="box">
+    <div class="left">
+      <ul>
+        <li><a href="#page1">1</a></li>
+        <li><a href="#page2">2</a></li>
+        <li><a href="#page3">3</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="nav" id="page1">1</div>
+      <hr>
+      <div class="nav" id="page2">2</div>
+      <hr>
+      <div class="nav" id="page3">3</div>
+    </div>
+  </div>
 </body>
-
 </html>

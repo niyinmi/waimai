@@ -66,7 +66,7 @@ export default {
 
 span {
   font-size: 14px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 i {

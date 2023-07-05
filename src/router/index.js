@@ -4,6 +4,13 @@ import ORder from '../pages/ORder/ORder.vue'
 import ProFile from '../pages/ProFile/ProFile.vue'
 import SEarch from '../pages/SEarch/SEarch.vue'
 import LOgin from '../pages/LOgin/LOgin.vue'
+import state from '@/store/state.js'
+
+//shop商家页
+import SHop from '@/pages/SHop/SHop.vue';
+import ShopGoods from '@/pages/SHop/ShopGoods/ShopGoods.vue';
+import ShopInfo from '@/pages/SHop/ShopInfo/ShopInfo.vue';
+import ShopRatings from '@/pages/SHop/ShopRatings/ShopRatings.vue';
 let a=VueRouter.prototype.push
 let b=VueRouter.prototype.push
 //由于重复进入同一个路由，vue会报错，这里重写路由原型里的push和replace方法
@@ -21,7 +28,7 @@ VueRouter.prototype.replace=function(lacation,resolve,reject){
     b.call(this,lacation,()=>{},()=>{})
   }
 }
-export default new VueRouter({
+const router = new VueRouter({
   routes:[
     {
       path:'/',
@@ -50,7 +57,43 @@ export default new VueRouter({
     },
     {
       path:'/login',
-      component:LOgin
+      component:LOgin,
+      meta:{isLogin:true}
     },
+    {
+      path:'/shop',
+      component:SHop,
+      //二级路由
+      children:[
+        {
+          path:'',
+          redirect:'/shop/goods'
+        },
+        {
+          path:'/shop/goods',
+          component:ShopGoods
+        },
+        {
+          path:'/shop/info',
+          component:ShopInfo
+        },
+        {
+          path:'/shop/ratings',
+          component:ShopRatings
+        }
+      ]
+    }
   ]
 })
+
+router.beforeEach((to, from, next)=>{
+  if (to.meta.isLogin) {
+    if (state.userInfo._id) {
+      next({path:'/userinfo'})
+    } else {
+      next()
+    }
+  } else {next()}
+})
+
+export default router

@@ -8,19 +8,14 @@
   </header>
 </template>
 <script>
-import ajax from '@/api/ajax';
 
 export default {
   props:['title'],
-  mounted(){
-    let promise = ajax('http://localhost:5000/students', {name:'wahaha', age:45})
-    promise.then((res)=>console.log(res))
-  },
   methods: {
   }
 }
 </script>
-<style>
+<style scoped>
 span{
   font-weight: normal;
 }
