@@ -1,24 +1,2 @@
-# waimai
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 图案外卖项目已完成
+> 在本地使用mongodb数据库，以及使用mock.js模拟接口数据。
